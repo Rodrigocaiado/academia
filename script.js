@@ -52,18 +52,28 @@ function removerTreino(index) {
 // Alternar exibição da seção de treinos
 daysButtons.forEach(button => {
   button.addEventListener('click', () => {
-    selectedDay = button.dataset.day;
+    if (selectedDay === button.dataset.day) {
+      // Se o dia já está selecionado, fecha a seção
+      formTreino.classList.add('hidden');
+      photosSection.classList.add('hidden'); // Oculta a seção "Antes e Depois"
+      btnAntesDepois.textContent = 'Antes e Depois';
+      selectedDay = null;
+      button.classList.remove('active');
+    } else {
+      // Caso contrário, abre a seção e exibe os treinos
+      selectedDay = button.dataset.day;
+      
+      // Atualiza a classe ativa nos botões dos dias
+      daysButtons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+      
+      // Exibe a seção de treinos
+      formTreino.classList.remove('hidden');
+      photosSection.classList.add('hidden'); // Oculta a seção "Antes e Depois"
+      btnAntesDepois.textContent = 'Antes e Depois';
 
-    // Atualiza a classe ativa nos botões dos dias
-    daysButtons.forEach(btn => btn.classList.remove('active'));
-    button.classList.add('active');
-
-    // Exibe a seção de treinos
-    formTreino.classList.remove('hidden');
-    photosSection.classList.add('hidden'); // Oculta a seção "Antes e Depois"
-    btnAntesDepois.textContent = 'Antes e Depois';
-
-    mostrarTreinos();
+      mostrarTreinos();
+    }
   });
 });
 
