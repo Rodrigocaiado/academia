@@ -45,10 +45,6 @@
       background-color: #007bff;
       color: white;
     }
-    .extras {
-      margin-top: 20px;
-      text-align: center;
-    }
     input, button {
       width: 100%;
       padding: 10px;
@@ -57,25 +53,6 @@
     }
     .hidden {
       display: none;
-    }
-    .photos-section {
-      text-align: center;
-      margin-top: 20px;
-    }
-    .photo-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin: 10px 0;
-    }
-    .photo-container img {
-      width: 45%;
-      border-radius: 10px;
-    }
-    .photo-container p {
-      flex: 1;
-      text-align: center;
-      font-size: 0.9rem;
     }
     @media (max-width: 600px) {
       .container {
@@ -115,19 +92,6 @@
       <button type="submit">Adicionar Treino</button>
     </form>
     <div id="listaTreinos"></div>
-    <div class="extras">
-      <button id="btnAntesDepois">Antes e Depois</button>
-    </div>
-    <div id="photosSection" class="photos-section hidden">
-      <h2>Antes e Depois</h2>
-      <form id="formPhotos">
-        <input type="file" id="photoBefore" accept="image/*" required>
-        <input type="file" id="photoAfter" accept="image/*" required>
-        <input type="text" id="photoDesc" placeholder="Descrição ou observações">
-        <button type="submit">Salvar</button>
-      </form>
-      <div id="photoList"></div>
-    </div>
   </div>
 
   <script src="script.js"></script>
